@@ -1,0 +1,23 @@
+.markdown-preview.markdown-preview {
+  h1 {
+    font-size: 1.8em;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    counter-reset: imageNumber;
+  }
+  div.image>img{
+    margin: auto;
+    display: block;
+  }
+  div.image>span{
+    display: block;
+    text-align: center;
+    font-size: 1em;
+  }
+  div.image>span::before{
+    counter-increment: imageNumber;
+    content: "図" counter(imageNumber) ":";
+    
+  }
+
+}
