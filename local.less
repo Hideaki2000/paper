@@ -1,9 +1,19 @@
 .markdown-preview.markdown-preview {
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+  font-family: 'Arial','Noto Serif JP','serif';
   h1 {
     font-size: 1.8em;
+    font-family: sans-serif;
     border-style: solid;
     border-width: 0 0 1px 0;
     counter-reset: imageNumber;
+  }
+  .katex{
+    font-weight: 200;
+  }
+  h2 {
+    font-size: 1.3em;
+    font-family: sans-serif;
   }
   div.image>img{
     margin: auto;
@@ -16,7 +26,7 @@
   }
   div.image>span::before{
     counter-increment: imageNumber;
-    content: "図" counter(imageNumber) ":";
+    content: "Fig" counter(imageNumber) ":";
     
   }
 
