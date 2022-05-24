@@ -1,16 +1,17 @@
 @import "../local.less"
+## バンド電子
+## 逆格子ベクトル
 
-## 半導体中の電子
-
-## 電子・正孔
- 電子はフェルミオンで1つの状態を1個の電子が占有し，その温度$T$での分布は __フェルミ分布関数__ 以下のようになる
+結晶格子は格子ベクトルによる離散的な並進対称性を有しているので、結晶格子によるポテンシャル$U(\boldsymbol{r})$($\boldsymbol{r}$は空間座標)はフーリエ級数を使って
 $$\begin{equation}
-  f_E(E)=\frac{1}{\exp{[(E-E_F)/k_BT]+1}}
+  U(r)=\sum_{\boldsymbol{G}}{U_{\boldsymbol{G}}\exp{(i\boldsymbol{G}\cdot r)}}
 \end{equation}$$
-で表せる．$E_F$はフェルミエネルギー,$k_B$はボルツマン定数である．$T=0$では$E_F$までのすべての状態を電子が占め，$E>E_F$ではすべての状態が空である．$E_F$が許容帯中にあり，$E_F$のところに状態密度がある場合，$k$空間内で$E(k)=E_F$となる面をフェルミ面，対応する波数$k_F$をフェルミ波数とよぶ．自由電子系の場合，フェルミ面は球面になる．
-フェルミ面が存在する系に電場がかかると，電子は加速され，__電子の運動量分布の偏り__ (ドリフト電流)が生じて電流となる.このように，固体中を移動して電荷を運ぶことのできるものを一般に __電荷キャリア__ と呼ばれている．半導体，絶縁体に分類される物質は$E_F$が禁制帯中に存在し絶対零度，低電場では運動量分布に偏りが生じないため，電気伝導が起こらない．
- 荷電子帯が詰まった状態に対して，何らかの原因で結晶波数$k$の1電子状態が空いたとすると，この係を流れる電流は$\boldsymbol{J(k)}$は，
-
+と展開できる。結晶の周期性より、$U(\boldsymbol{r}+\boldsymbol{R})=U(\boldsymbol{r})$であるから、$\boldsymbol{G}$の条件は
+$$\boldsymbol{G}\cdot\boldsymbol{R}=2\pi n(n:\text{整数})$$
+### ブロッホの定理
+　結晶格子は格子ベクトルによる離散的並進対称性を有しているので、結晶格子によるポテンシャル
+## 状態密度
+(1.13)で導入した
 ## 古典的電気伝導
 ### 輸送係数
 　電気伝導は、外部からの電場を加えるなどの方法で疲弊どう状態が生じ、キャリアによって固体中を電流が流れる現象である。
@@ -30,7 +31,7 @@ $$\begin{equation}
 で与えらる。$d\boldsymbol{r}d\boldsymbol{t}$に含まれる粒子の力学的状態はほぼ同じであるから、
 $$\begin{equation}
 f\left(\boldsymbol{r}+\left( \frac{\boldsymbol{p}}{m^*}\right)dt,\boldsymbol{p}+\boldsymbol{F}dt,t+dt\right)=f(\boldsymbol{r},\boldsymbol{p},t)
-\end{equation}$$
+\end{equation}$$細田千尋
 となる。散乱があると、Fig1に模式的に示したように、さまざまな理由による変化が生じるこれを$(\partial f/\partial t)_c$と表すと以下の式になる。
 $$\begin{equation}
 f\left(\boldsymbol{r}+\left( \frac{\boldsymbol{p}}{m^*}\right)dt,\boldsymbol{p}+\boldsymbol{F}dt,t+dt\right)+\left(\frac{\partial f}{\partial t}\right)=f(\boldsymbol{r},\boldsymbol{p},t)
@@ -63,3 +64,13 @@ $$\begin{equation}
 \end{equation}$$
 ここで$\boldsymbol{E}$を摂動と考えて,右辺第二項の$f$を$f_0$再度右辺に代入して$\boldsymbol{E}$の2次と逐次代入で$\boldsymbol{E}$のべき展開が得られる。一次では
 $$\begin{equation}f(\boldsymbol{p})\simeq f_0(\boldsymbol{p})+e\tau(\boldsymbol{p})\boldsymbol{E}\cdot\left(\frac{\partial f_0}{\partial\boldsymbol{p}}\right)\end{equation}$$
+$E=(E_x,0,0)$に対し電流密度$\boldsymbol{j}$は、
+$$\begin{equation}
+\begin{aligned}
+    \frac{\boldsymbol{j}}{-e}&=\int \frac{dk^3}{(2\pi)^3}v                       (\boldsymbol{k})f(\boldsymbol{k})\\
+                            &= \int\frac{dk^3}{(2\pi)^3}\frac{h\boldsymbol{k}}{m^*}\left(f_0\left(\boldsymbol{k}\right)+\frac{e\tau(\boldsymbol{k})}{h}\boldsymbol{E_x}\frac{\partial f_0}{\partial k_x}\right)
+\end{aligned}
+\end{equation}$$
+である。
+$\boldsymbol{k}f_0(\boldsymbol{k})$の積分、また、$j_x$,$j_z$は奇関数の積分により０である。
+\frac{j_x}{}
