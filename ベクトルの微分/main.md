@@ -84,13 +84,56 @@ $$\begin{equation}
 $$\begin{equation}
     \frac{\partial}{\partial \boldsymbol{x}}A\boldsymbol{x}=A^{T}\space A \in R^{n\times n}
 \end{equation}$$
+
 $$\begin{equation}
-    
+\frac{d\boldsymbol{x}^T\boldsymbol{x}}{d\boldsymbol{x}}=2\boldsymbol{x}
+\end{equation}$$
+
+$$\begin{equation}
+\frac{d}{d\boldsymbol{x}}(\boldsymbol{x}^TA\boldsymbol{x})=(A+A^T)\boldsymbol{x}
+\end{equation}$$
+$$\begin{equation}
+    \frac{d}{d\boldsymbol{x}}\boldsymbol{x}^T\boldsymbol{a}=\boldsymbol{a}
+\end{equation}$$
+
+$$\begin{equation}
+    \frac{d}{d\boldsymbol{x}}\boldsymbol{a}^T\boldsymbol{x}=\boldsymbol{a}
 \end{equation}$$
 > https://qiita.com/paopao_stat/items/c7020001ebb0414cddaa
 
-## スカラーをベクトルで微分するときの定義
+## 練習
 
-多変数関数$f(x_1,x_2,x_3,\cdots,x_n)$に対して，各変数による偏微分をならべたベクトルを勾配ベクトルという．
+### 最小二乗法の解の導出
+
+$$\begin{equation}
+    E(\boldsymbol{w})=\frac{1}{2}\|\bold{X}\boldsymbol{w}-\bold{t}\|^2
+\end{equation}$$
+これを$\boldsymbol{w}$について微分してみる
+$$\begin{equation}
+\begin{aligned}
+    E(\boldsymbol{w})& =\frac{1}{2}\|\bold{X}\boldsymbol{w}-\bold{t}\|^2 \\
+                    &=\frac{1}{2}(\bold{X}\boldsymbol{w}-\bold{t})^T(\bold{X}\boldsymbol{w}-\bold{t})\\
+                    &=\frac{1}{2}(\boldsymbol{w}^T\bold{X}^T\bold{X}\boldsymbol{w}-\boldsymbol{w}^T\bold{X}^T\bold{t}-\bold{t}^T\bold{X}\boldsymbol{w}+\|\bold{t}\|^2)
+\end{aligned}
+\end{equation}$$
+
+と展開できるので
+式(9)
+$$\begin{equation}
+    \frac{d}{d\boldsymbol{w}}(\bold{t}^T\bold{X}\boldsymbol{w})=(\bold{t}^T\bold{X})^T=\bold{X}^T\bold{t}
+\end{equation}$$
+また式(13)より
+$$\begin{equation}
+    \frac{d}{d\boldsymbol{w}}(\boldsymbol{w}^T\bold{X}^T\bold{t})=(\bold{X^T t})
+\end{equation}$$
+式11,式(16),式(17)より
+$$\begin{equation}
+\begin{aligned}
+        \frac{dE(\boldsymbol{w})}{\partial \boldsymbol{w}}&=\frac{1}{2}(\bold{X}^T\bold{X}+(\bold{X}^T\bold{X})^T)\boldsymbol{w}-\bold{X}^T\bold{t}\\
+        &=\bold{X}^T\bold{X}\boldsymbol{w}-\bold{X}^T\bold{t}
+\end{aligned}
+\end{equation}$$
+となる．
+
 
 > https://mathwords.net/bekutorubibun
