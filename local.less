@@ -1,5 +1,11 @@
 .markdown-preview.markdown-preview {
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+  @media print{
+    /* 印刷時にのみ適用されるスタイルを記述 */
+    div.not_break {
+        break-inside: avoid;
+    }
+  }
   font-family: 'Arial','Noto Serif JP','serif';
   h1 {
     font-size: 1.8em;
